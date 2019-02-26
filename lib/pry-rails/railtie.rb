@@ -3,6 +3,7 @@
 module PryRails
   class Railtie < Rails::Railtie
     console do
+      next unless ENV['PRY_RAILS'].present?
       require 'pry'
       require 'pry-rails/commands'
 
